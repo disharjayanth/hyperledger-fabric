@@ -1,2 +1,31 @@
 # sample_3PeerNetwork
 Hyperledger Fabric network with 3 Peer and 1 Orderer 
+
+# Following are the steps to run the setup
+# Pre Requisite
+# Hyperledger Binaries and HLF Pre-Requisites software are installed
+
+1. create a working folder, chande directory to working folder
+2. git clone https://github.com/ashwanihlf/sample_3PeerNetwork.git
+3. sudo chmod -R 755 sample_3PeerNetwork/
+4. cd sample_3PeerNetwork  
+5. mkdir config  
+	## remove config and crypto-config if they are existing before creation of config folder (Optional)
+	5a. sudo rm -rf config
+	5b  sudo rm -rf crypto-config
+6. export COMPOSE_PROJECT_NAME=net
+7. sudo ./generate.sh
+8. sudo ./start.sh
+9. docker exec -it cli /bin/bash
+10. peer chaincode invoke -C mychannel -n samplecc -c '{"function":"initCar","Args":["Ashwani","Blue","BMW"]}'
+11. peer chaincode query -C mychannel -n samplecc -c '{"function":"readCar","Args":["Ashwani"]}'      
+
+# returns {"color":"bmw","docType":"Car","model":"blue","owner":"Ashwani"}
+
+12. docker exec -e "CORE_PEER_ADDRESS=peer0.org2.example.com:7051" -e "CORE_PEER_LOCALMSPID=Org2MSP" -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp" cli peer chaincode query -C mychannel -n samplecc -c '{"function":"readCar","Args":["Ashwani"]}'      
+
+# returns {"color":"bmw","docType":"Car","model":"blue","owner":"Ashwani"}
+
+13. docker ps
+
+# you should see 2 chaincode container one for Org1 and Org2 each
