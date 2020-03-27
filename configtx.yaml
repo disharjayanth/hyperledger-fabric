@@ -1,8 +1,3 @@
-# Copyright IBM Corp. All Rights Reserved.
-#
-# SPDX-License-Identifier: Apache-2.0
-#
-
 ---
 ################################################################################
 #
@@ -14,11 +9,7 @@
 ################################################################################
 Organizations:
 
-    # SampleOrg defines an MSP using the sampleconfig.  It should never be used
-    # in production but may be used as a template for other definitions
     - &OrdererOrg
-        # DefaultOrg defines the organization which is used in the sampleconfig
-        # of the fabric.git development environment
         Name: OrdererOrg
 
         # ID to load the MSP definition as
@@ -28,8 +19,6 @@ Organizations:
         MSPDir: crypto-config/ordererOrganizations/example.com/msp
 
     - &Org1
-        # DefaultOrg defines the organization which is used in the sampleconfig
-        # of the fabric.git development environment
         Name: Org1MSP
 
         # ID to load the MSP definition as
@@ -44,8 +33,6 @@ Organizations:
             - Host: peer0.org1.example.com
               Port: 7051
     - &Org2
-        # DefaultOrg defines the organization which is used in the sampleconfig
-        # of the fabric.git development environment
         Name: Org2MSP
 
         # ID to load the MSP definition as
@@ -61,8 +48,6 @@ Organizations:
               Port: 7051
 
     - &Org3
-        # DefaultOrg defines the organization which is used in the sampleconfig
-        # of the fabric.git development environment
         Name: Org3MSP
 
         # ID to load the MSP definition as
