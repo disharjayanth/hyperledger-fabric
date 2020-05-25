@@ -3,7 +3,7 @@
 Pre Requisite - Hyperledger Binaries and HLF Pre-Requisites software are installed
 
 # Following are the steps to run the setup
-1. create a working folder, chande directory to working folder
+1. create a working folder, change directory to working folder
 2. git clone https://github.com/ashwanihlf/sample_3PeerNetwork.git
 3. sudo chmod -R 755 sample_3PeerNetwork/
 4. cd sample_3PeerNetwork  

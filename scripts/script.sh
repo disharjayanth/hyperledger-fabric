@@ -150,10 +150,4 @@ installChaincode 2
 echo "=========================================Instantiating chaincode on ====================="
 instantiateChaincode 0
 echo
-#echo "======================================== Instantitaie chaincode==========================="
-#instantiateChaincode 2
-#echo "==================== Instantiate chaincode================================================"
-#instantiateChaincode 1
-#echo "===============================Instantiate chaincode ======================================="
 sleep 5
-#instantiateChaincode 0
